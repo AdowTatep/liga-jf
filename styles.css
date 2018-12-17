@@ -1,0 +1,217 @@
+@keyframes fadeIn {
+    0% { opacity: 0; margin-top: 30px; transform: scale(1.1); }
+    100% { opacity: 1; margin-top: 0px; transform: scale(1); }
+}
+
+@-webkit-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes gradientAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientAnim { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    opacity: 0; margin-top: 30px; transform: scale(1.1);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0.2s;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;    
+    font-weight: 900;
+}
+
+h2 {   
+    font-weight: 900;
+    text-align: center;
+}
+
+h3 {   
+    font-weight: 900;
+    text-align: center;
+}
+
+.welcome {
+    /* text-shadow: 2px 2px 2px #856739; */
+
+    /* gradient */
+    background: rgba(133,103,57,1);/* Old Browsers */
+    background: -moz-linear-gradient(-45deg, rgba(133,103,57,1) 0%, rgba(214,199,34,1) 21%, rgba(214,199,34,1) 51%, rgba(214,199,34,1) 76%, rgba(245,237,144,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(133,103,57,1)), color-stop(21%, rgba(214,199,34,1)), color-stop(51%, rgba(214,199,34,1)), color-stop(76%, rgba(214,199,34,1)), color-stop(100%, rgba(245,237,144,1)));/* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(-45deg, rgba(133,103,57,1) 0%, rgba(214,199,34,1) 21%, rgba(214,199,34,1) 51%, rgba(214,199,34,1) 76%, rgba(245,237,144,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, rgba(133,103,57,1) 0%, rgba(214,199,34,1) 21%, rgba(214,199,34,1) 51%, rgba(214,199,34,1) 76%, rgba(245,237,144,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, rgba(133,103,57,1) 0%, rgba(214,199,34,1) 21%, rgba(214,199,34,1) 51%, rgba(214,199,34,1) 76%, rgba(245,237,144,1) 100%); /* IE 10+ */
+    background: linear-gradient(135deg, rgba(133,103,57,1) 0%, rgba(214,199,34,1) 21%, rgba(214,199,34,1) 51%, rgba(214,199,34,1) 76%, rgba(245,237,144,1) 100%);/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#856739', endColorstr='#f5ed90', GradientType=1 );/* IE6-9 fallback on horizontal gradient */
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.divider {    
+    background-color: #d6c722;
+    width: 95%;
+    height: 2px;
+    margin: 2em auto;
+    box-shadow: 0px 1px 20px 1px #856639;
+    border-radius: 50px;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.mini-divider {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 75%;
+    height: 2px;
+    margin: 2em auto;
+    box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+#streamBottom {
+    display: none;
+}
+
+#streamTop {    
+    display: none;    
+}
+
+.first-place {
+    font-size: 2em;
+}
+
+.second-place {
+    font-size: 1.6em;
+}
+
+.third-place {
+    font-size: 1.2em;
+}
+
+.fourth-place {
+
+}
+
+a {
+    color: #856639;
+}
+
+#wall {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.live {
+    /* gradient */
+    background: rgba(248,80,50,1);/* Old Browsers */
+    background: -moz-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(100,65,165,1) 27%, rgba(145,17,0,1) 65%, rgba(231,56,39,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(27%, rgba(100,65,165,1)), color-stop(65%, rgba(145,17,0,1)), color-stop(100%, rgba(231,56,39,1)));/* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(100,65,165,1) 27%, rgba(145,17,0,1) 65%, rgba(231,56,39,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(100,65,165,1) 27%, rgba(145,17,0,1) 65%, rgba(231,56,39,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(100,65,165,1) 27%, rgba(145,17,0,1) 65%, rgba(231,56,39,1) 100%); /* IE 10+ */
+    background: linear-gradient(135deg, rgba(248,80,50,1) 0%, rgba(100,65,165,1) 27%, rgba(145,17,0,1) 65%, rgba(231,56,39,1) 100%);/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );/* IE6-9 fallback on horizontal gradient */
+
+    background-size: 200% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-animation: gradientAnim 3s ease infinite;
+    -moz-animation: gradientAnim 3s ease infinite;
+    -o-animation: gradientAnim 3s ease infinite;
+    animation: gradientAnim 3s ease infinite;
+}
+
+.grid-sizer,
+.grid-item { 
+    width: 47.5%;
+    margin: 12px;
+}
+
+.media iframe {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;  
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+object {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    margin: 5em 0 2em 0;
+}
+
+@media only screen and (max-width: 1435px) {
+    .logo {
+      width: 100%;
+    }
+
+    .content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        position: initial !important;
+        margin: 12px auto;        
+        width: 100%;
+    }
+  }
