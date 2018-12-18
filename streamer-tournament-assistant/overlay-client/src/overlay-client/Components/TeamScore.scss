@@ -1,7 +1,20 @@
+@keyframes gradientAnim {
+    0%{background-position:100% 50%}
+    1%{background-position:0% 50%}
+    2%{background-position:100% 50%}
+    100%{background-position:100% 50%}
+}
+
+// "Secret animation"
+// It has 9 minutes of "nothing" and some seconds of animation that play at a random delay set by the javascript
 @mixin textGradient($gradientColor) {
+    $anim-time: 540s; // 9 minutes
     background: $gradientColor;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 200% 400%;
+    background-position:100% 50%;
+    animation: gradientAnim $anim-time ease infinite;
 }
 
 .component-teamScore {    
@@ -46,11 +59,11 @@
                 }
 
                 &.team-1 {
-                    @include textGradient(-webkit-linear-gradient(120deg, rgba(32,167,186,1) 0%, rgba(2,86,145,1) 47%, rgba(0,181,255,1) 91%));
+                    @include textGradient(-webkit-linear-gradient(120deg, rgba(32,167,186,1) 0%, rgba(2,86,145,1) 47%, #fff 50%, #fff 51%, rgba(2,86,145,1) 56%, rgba(0,181,255,1) 91%));
                 }
 
                 &.team-2 {
-                    @include textGradient(-webkit-linear-gradient(120deg, rgba(186,32,32,1) 0%, rgba(145,2,2,1) 47%, rgba(255,0,0,1) 91%));                    
+                    @include textGradient(-webkit-linear-gradient(120deg, rgba(186,32,32,1) 0%, rgba(145,2,2,1) 47%, #fff 50%, #fff 51%, rgba(145,2,2,1) 56%, rgba(255,0,0,1) 91%));                    
                 }
             }
 

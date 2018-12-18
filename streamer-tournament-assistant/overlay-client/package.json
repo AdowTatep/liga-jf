@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.15",
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
+    "fitty": "^2.2.6",
     "node-sass": "^4.11.0",
+    "odometer": "^0.4.8",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
@@ -27,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/node": "^10.12.15"
+  }
 }

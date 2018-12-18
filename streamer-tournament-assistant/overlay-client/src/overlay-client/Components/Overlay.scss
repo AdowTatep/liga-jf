@@ -23,12 +23,9 @@ $animDelay: 2s;
     margin: 0px;
     font-family: 'Lato', sans-serif;
     
-    .container {        
-        align-items: center;
+    .container-top {        
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        width: 100%;
 
         .scoreWrapper {        
             margin: 0 250px;
@@ -39,5 +36,8 @@ $animDelay: 2s;
             animation-delay: $animDelay+0.3;
         }
     }
-    
+
+    .component-corner {
+        margin: 0 0 8px 7px;
+    }    
 }
