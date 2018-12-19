@@ -1,8 +1,7 @@
 @keyframes gradientAnim {
     0%{background-position:100% 50%}
     1%{background-position:0% 50%}
-    2%{background-position:100% 50%}
-    100%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 // "Secret animation"
@@ -59,11 +58,11 @@
                 }
 
                 &.team-1 {
-                    @include textGradient(-webkit-linear-gradient(120deg, rgba(32,167,186,1) 0%, rgba(2,86,145,1) 47%, #fff 50%, #fff 51%, rgba(2,86,145,1) 56%, rgba(0,181,255,1) 91%));
+                    @include textGradient(-webkit-linear-gradient(120deg, rgba(32,167,186,1) 0%, rgba(2,86,145,1) 47%, rgb(68, 152, 212) 50%, rgba(2,86,145,1) 56%, rgba(0,181,255,1) 91%));
                 }
 
                 &.team-2 {
-                    @include textGradient(-webkit-linear-gradient(120deg, rgba(186,32,32,1) 0%, rgba(145,2,2,1) 47%, #fff 50%, #fff 51%, rgba(145,2,2,1) 56%, rgba(255,0,0,1) 91%));                    
+                    @include textGradient(-webkit-linear-gradient(120deg, rgba(186,32,32,1) 0%, rgba(145,2,2,1) 47%, rgb(165, 74, 74) 50%,  rgba(145,2,2,1) 56%, rgba(255,0,0,1) 91%));                    
                 }
             }
 

@@ -38,7 +38,6 @@ class Corner extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className={`component-counter`}>
-                <PopUp value={"Test"} />
                 <div className="margin">
                     <div className="fit-counter">
                         <FitText minSize={15} maxSize={65} shouldRefit={this.shoudFit} onFit={() => { this.startOdometer() }}>

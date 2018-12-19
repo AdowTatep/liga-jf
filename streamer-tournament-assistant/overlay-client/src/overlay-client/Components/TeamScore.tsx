@@ -34,7 +34,6 @@ class TeamScore extends React.Component<IProps, IState> {
         // Secret animation delay plays randomly
         const randomDelay = {
             animationDelay: `${Math.floor(Math.random() * 535) + 5}s`
-            // animationDelay: "5s"
         }
         if (this.props.teamNumber === 1) {
             return (
