@@ -4,6 +4,7 @@ import * as odmtr from "odometer";
 import "odometer/themes/odometer-theme-minimal.css";
 import PopUp from "./PopUp";
 import FitText from "./FitText";
+import { EventEmitter } from "events";
 
 export interface IProps {
     initialValue?: number;
@@ -17,45 +18,69 @@ interface IState {
 
 class Corner extends React.Component<IProps, IState> {
     odometer: any;
+    debounceId: NodeJS.Timeout[] = [];
+
+    shoudFit = new EventEmitter();
 
     constructor(props: IProps) {
         super(props);
-        this.state = { currentValue: props.initialValue || 99999999999990 };
+        this.state = { currentValue: props.initialValue || 0.0 };
     }
 
     public componentDidMount() {
-        setInterval(() => { this.setState({ currentValue: this.state.currentValue + Math.floor((Math.random() + 1) * 10) }) }, 10000);
-    }
-
-    public startOdometer(element: HTMLDivElement | null) {
-        // I could've done this by hand but it wouldn't be that good
-        if (element && !this.odometer) {
-            var value = element.querySelector(".value");
-            this.odometer = new odmtr({
-                el: value,
-                value: this.state.currentValue,
-                format: '(.ddd),dd',
-                theme: 'minimal',
-                selector: '.value',
-                duration: 5000,
-            });
-        }
+        this.startOdometer(0);
+        this.animationDone(null, 10);
+        setInterval(() => {
+            this.setState({ currentValue: this.state.currentValue + Math.floor((Math.random() + 1) * 99) })
+        }, 5000);
     }
 
     public render() {
         return (
-            <div className={`component-counter`} ref={ctx => this.startOdometer(ctx)}>
+            <div className={`component-counter`}>
                 <PopUp value={"Test"} />
-                {/* Refer to https://youtu.be/JWt-dT3xZys?list=PLTEhlYdONYxv1wk2FsIpEz92X3x2E7bSx&t=257 */}
-                <FitText minSize={24} maxSize={60} reFit={this.refit}>
-                    <div className="value">{this.state.currentValue}</div>
-                </FitText>
+                <div className="margin">
+                    <div className="fit-counter">
+                        <FitText minSize={15} maxSize={65} shouldRefit={this.shoudFit} onFit={() => { this.startOdometer() }}>
+                            <div>R$</div><div className="value">{this.state.currentValue}</div>
+                        </FitText>
+                    </div>
+                </div>
             </div>
         );
     }
 
-    private refit() {
+    private startOdometer(debounceMs: number = 200) {
+        var initOdometer = () => {
+            var element = document.querySelector(".component-counter");
+            if (element) {
+                var value = element.querySelector(".value");
+                if (value) {
+                    this.odometer = new odmtr({
+                        el: value,
+                        value: this.state.currentValue,
+                        format: '(.ddd),dd',
+                        theme: 'minimal',
+                        selector: '.value',
+                        duration: 5000,
+                    });
 
+                    value.removeEventListener("odometerdone", () => { });
+                    value.addEventListener("odometerdone", (e) => this.animationDone(e));
+                }
+            }
+        }
+
+        clearTimeout(this.debounceId[0]);
+        this.debounceId[0] = setTimeout(() => { initOdometer() }, debounceMs);
+    }
+
+    private animationDone(event, debounceMs: number = 200) {
+        // If odometer animation finishes, do something
+        var refit = () => this.shoudFit.emit("refit");
+
+        clearTimeout(this.debounceId[1]);
+        this.debounceId[1] = setTimeout(() => { refit() }, debounceMs);
     }
 }
 
