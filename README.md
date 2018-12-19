@@ -1,2 +1,1 @@
-# liga-jf.github.io
-This repository is related to the liga-jf website and its contents
+[http://adowtatep.github.io/liga-jf](http://adowtatep.github.io/liga-jf)
