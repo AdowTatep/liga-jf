@@ -1,5 +1,5 @@
 import * as React from "react";
-import CornerBackground from "./../Images/corner.png";
+import CornerBackground from "./../../../Images/corner.png";
 import "./Corner.scss";
 class Corner extends React.Component {
     public render() {

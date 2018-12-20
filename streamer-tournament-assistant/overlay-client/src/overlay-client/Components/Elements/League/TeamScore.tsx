@@ -1,5 +1,5 @@
 import * as React from "react";
-import ScoreBackground from "./../Images/Score.png";
+import ScoreBackground from "./../../../Images//Score.png";
 import "./TeamScore.scss";
 
 export interface IProps {

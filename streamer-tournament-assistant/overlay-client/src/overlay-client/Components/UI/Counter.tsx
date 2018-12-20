@@ -2,8 +2,7 @@ import * as React from "react";
 import "./Counter.scss";
 import * as odmtr from "odometer";
 import "odometer/themes/odometer-theme-minimal.css";
-import PopUp from "./PopUp";
-import FitText from "./FitText";
+import FitText from "../Layout/FitText";
 import { EventEmitter } from "events";
 
 export interface IProps {

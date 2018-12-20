@@ -1,10 +1,10 @@
 import * as React from 'react';
 import "./Overlay.scss";
-import TeamScore from './TeamScore';
-import Corner from './Corner';
-import VerticalLayout from './VerticalLayout';
-import Counter from './Counter';
-import Transition from './Transition';
+import TeamScore from './Elements/League/TeamScore';
+import Corner from './Elements/League/Corner';
+import VerticalLayout from './Layout/VerticalLayout';
+import Counter from './UI/Counter';
+import Transition from './Layout/Transition';
 
 class Overlay extends React.Component {
     public render() {
