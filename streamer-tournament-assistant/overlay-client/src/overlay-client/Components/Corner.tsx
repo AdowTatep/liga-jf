@@ -1,18 +1,7 @@
 import * as React from "react";
 import CornerBackground from "./../Images/corner.png";
 import "./Corner.scss";
-
-export interface IProps {
-}
-
-interface IState {
-}
-
-class Corner extends React.Component<IProps, IState> {
-    constructor(props: IProps) {
-        super(props);
-    }
-
+class Corner extends React.Component {
     public render() {
         return (
             <div className={`component-corner`}>

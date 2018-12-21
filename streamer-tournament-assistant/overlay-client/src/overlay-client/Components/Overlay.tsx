@@ -4,6 +4,7 @@ import TeamScore from './TeamScore';
 import Corner from './Corner';
 import VerticalLayout from './VerticalLayout';
 import Counter from './Counter';
+import Transition from './Transition';
 
 class Overlay extends React.Component {
     public render() {
@@ -38,7 +39,9 @@ class Overlay extends React.Component {
         return (
             <div>
                 <Corner>
-                    <Counter />
+                    <Transition transition={1} duration={4} startDelay={3}>
+                        <Counter />
+                    </Transition>
                 </Corner>
             </div>
         );
